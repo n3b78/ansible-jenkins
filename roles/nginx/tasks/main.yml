@@ -6,16 +6,17 @@
    
 - name: start nginx
   systemd:
-    name: "{{ pkg }}"
+    name: nginx
     state: started
+
 
 - name: create directory  
   file:
     path: /var/www/html
-    mode: 0755
-    recurse: yes
     state: directory
+    mode: 0755
     owner: root
+    
 
 - name: index
   template:
