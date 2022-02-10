@@ -16,6 +16,7 @@
     state: directory
     mode: 0755
     owner: root
+    recurse: yes
     
 
 - name: index
