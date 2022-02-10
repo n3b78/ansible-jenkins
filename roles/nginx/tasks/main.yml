@@ -6,12 +6,18 @@
    
 - name: start nginx
   systemd:
-    name: nginx
+    name: "{{ pkg }}"
     state: started
-  
+
+- name: create directory  
+  file:
+    path: /var/www/html
+    mode: 0755
+    recurse: yes
+    state: directory
+    owner: root
 
 - name: index
   template:
     src: index.html.j2
     dest: /var/www/html/index.html
-
